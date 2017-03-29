@@ -31,6 +31,8 @@ for param in cab['parameters']:
 
     if value is None:
         continue
+    if value is True:
+        value = ""
 
     args[name] = value
 
