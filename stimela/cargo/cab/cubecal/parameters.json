@@ -1,0 +1,133 @@
+{
+    "task": "cubecal", 
+    "base": "stimela/cubecal", 
+    "tag": "dev", 
+    "description": "Optimised calibration suite.", 
+    "prefix": "--", 
+    "binary": "gocubecal", 
+    "msdir": "true", 
+    "parameters": [
+        {
+            "info": "Name of measurement set.", 
+            "dtype": "file", 
+            "required": true, 
+            "name": "msname", 
+            "io": "msfile"
+        }, 
+        {
+            "info": "Name of sky model.", 
+            "dtype": "file", 
+            "required": true, 
+            "name": "smname", 
+            "io": "input"
+        }, 
+        {
+            "info": "Number of timeslots to include per chunk.", 
+            "dtype": "int", 
+            "default": 1, 
+            "name": "tchunk"
+        },
+        {
+            "info": "Number of frequencies to include per chunk.", 
+            "dtype": "int", 
+            "default": 1, 
+            "name": "fchunk"
+        },
+        {
+            "info": "Number of timeslots per solution interval.", 
+            "dtype": "int", 
+            "default": 1, 
+            "name": "tint"
+        }, 
+        {
+            "info": "Number of frequencies per solution interval.", 
+            "dtype": "int", 
+            "default": 1, 
+            "name": "fint"
+        }, 
+        {
+            "info": "Apply FLAG column to data.", 
+            "dtype": "bool", 
+            "default": false, 
+            "name": "applyflags"
+        }, 
+        {
+            "info": "Bitmask to apply to the biflag column. Triggers bitflag behaviour.", 
+            "dtype": "int", 
+            "default": 0, 
+            "name": "bitmask"
+        },
+        {
+            "info": "Maximum number of iterations.", 
+            "dtype": "int", 
+            "default": 50, 
+            "name": "maxiter"
+        }, 
+        {
+            "info": "Selects FIELD_ID using TAQL.", 
+            "dtype": "int",  
+            "name": "field"
+        },
+        {
+            "info": "Selects DATA_DESC_ID using TAQL.", 
+            "dtype": "int",  
+            "name": "ddid"
+        },
+        {
+            "info": "Selects from --ddid to a particular DATA_DESC_ID.", 
+            "dtype": "int", 
+            "name": "ddid-to"
+        }, 
+        {
+            "info": "Precision to use for computation.", 
+            "dtype": "str", 
+            "default": "32", 
+            "name": "precision"
+        },
+        {
+            "info": "Simulate with Montblanc. Ignores MODEL_DATA.", 
+            "dtype": "bool", 
+            "default": false, 
+            "name": "simulate"
+        },
+        {
+            "info": "Simulate and solve for DDEs.", 
+            "dtype": "bool", 
+            "default": false, 
+            "name": "use_ddes"
+        },
+        {
+            "info": "Stopping criteria for delta G - stop when ",
+                    "solutions change less than this value.", 
+            "dtype": "float", 
+            "default": 0.000001, 
+            "name": "min_delta_g"
+        },
+        {
+            "info": "Stopping criteria for delta chi - stop when ",
+                    "the residual changes less than this value.", 
+            "dtype": "float", 
+            "default": 0.000001, 
+            "name": "min_delta_chi"
+        },
+        {
+            "info": "Interval at which to check the chi squared ",
+                    "value - expensive computation.", 
+            "dtype": "int", 
+            "default": 5, 
+            "name": "chi_interval"
+        },
+        {
+            "info": "Number of processes to run.", 
+            "dtype": "int", 
+            "default": 1, 
+            "name": "processes"
+        },
+        {
+            "info": "Save corrected visibilities to CORRECTED_DATA.", 
+            "dtype": "bool", 
+            "default": false, 
+            "name": "save_corrected"
+        }      
+    ]
+}
